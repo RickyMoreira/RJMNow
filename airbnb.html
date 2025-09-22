@@ -61,7 +61,7 @@
     /* 🏁 Top Banner */
     <!-- 🏁 Top Banner -->
 .banner-logo {
-  max-width: 10px;
+  max-width: 20px;
   height: auto;
   margin-bottom: 5px;
   border-radius: 3px;
@@ -70,10 +70,10 @@
     .top-banner {
       background-color: #006D77;
       color: white;
-      padding: 10px;
+      padding: 20px;
       border-radius: 6px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .banner-content {
@@ -171,7 +171,7 @@
 <!-- 🏁 Top Banner -->
 <header class="top-banner">
   <div class="banner-content">
-    <img src="logo8.png" alt="Logo Alto da Vila Progresso" class="banner-logo">
+    <img src="Logo8.jpg" alt="Logo Alto da Vila Progresso" class="banner-logo">
    
     <h2 id="subheader-title" class="banner-subtitle">Guia da Casa</h2>
     <div id="voltage-warning" class="voltage-box">
@@ -228,21 +228,16 @@
       });
     </script>
 
-   
-
-<!-- 🇧🇷 Português -->
-<div id="pt" class="lang-section">
-  <details id="guide-block" style="margin-top:20px">
-    <summary id="guide-summary" style="font-size:18px; font-weight:bold; cursor: pointer;">
-      🚪 Guia da Casa
-    </summary>
-    <div id="guide-content" style="margin-left:20px; margin-top:10px;">
-
-      <!-- Your sensitive content goes here -->
+    <!-- 🇧🇷 Português -->
+       <div id="pt" class="lang-section">
+      <details style="margin-top:20px">
+        <summary style="font-size:18px; font-weight:bold">🚪 Guia Rápido </summary>
+        <div style="margin-left:20px; margin-top:10px">
+      
       <details>
         <summary>📍 Endereço </summary>
         <p>🏠 Rua Capitão Curado, 323 – Vila Progresso, Jundiaí – SP</p>
-        <p>🗺️ <<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d892659.3292037405!2d-82.3964899964899!3d29.077607529218295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sliberty%20statue!5e0!3m2!1sen!2sus!4v1758573332311!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>>Abrir no Google Maps</a></p>
+        <p>🗺️ <a href="https://maps.app.goo.gl/7fH2aEjoKZjnimcf9" target="_blank">Abrir no Google Maps</a></p>
       </details>
 
       <details>
@@ -270,55 +265,6 @@
 
     </div>
   </details>
-   </div>
-
-<script>
-  function promptSetup() {
-    const password = prompt("Digite a senha de configuração:");
-    const correctPassword = "975321";
-
-    if (password === correctPassword) {
-      const dateInput = prompt("Digite a data de check-in (formato: AAAA-MM-DD):");
-      const unlockDate = new Date(dateInput + "T06:00:00");
-
-      if (!isNaN(unlockDate.getTime())) {
-        localStorage.setItem("checkInDate", unlockDate.toISOString());
-        alert("Data de check-in configurada com sucesso.");
-        checkUnlock();
-      } else {
-        alert("Formato inválido. Use: 2025-09-17");
-      }
-    } else {
-      alert("Senha incorreta.");
-    }
-  }
-
-  function checkUnlock() {
-    const storedDate = localStorage.getItem("checkInDate");
-    const guideBlock = document.getElementById("guide-block");
-    const guideSummary = document.getElementById("guide-summary");
-
-    if (storedDate) {
-      const now = new Date();
-      const unlockDate = new Date(storedDate);
-
-      if (now >= unlockDate) {
-        // Allow normal expansion
-        guideSummary.onclick = null;
-      } else {
-        // Prevent expansion before unlock
-        guideSummary.onclick = function(e) {
-          e.preventDefault();
-          alert("Este guia será desbloqueado às 6h no dia do check-in.");
-        };
-      }
-    }
-  }
-
-  window.onload = checkUnlock;
-</script>
-      
-
       <details><summary>📁 Regras da Casa</summary>
       <p>👥 Caso haja algum hóspede extra de última hora que não esteja incluído na reserva, pedimos a gentileza de nos informar para que possamos adicioná-lo corretamente (inclusive crianças).</p>
       <p>🚭 Proibido fumar dentro da casa.</p>
@@ -367,15 +313,10 @@
   <p>🔥 Limpar a churrasqueira após o uso. A equipe de limpeza não é responsável por ela.</p>
 </details>
 
-
 <p style="text-align:center; font-size:1.4em; margin-top:30px; color:#006D77;">
  👋 <span class="Bem-Vindo-message">Sejam muito Bem-vindos(as) e Aproveite sua Estadia!</span>
 </p>
   </div>
-<!-- 🔐 Password + Date Setup -->
-<div id="setup-block">
-  <button onclick="promptSetup()">🔒 Configurar Check-In</button>
-</div>
   <!-- English -->
  <div id="en" class="lang-section">
   <details style="margin-top:20px">
